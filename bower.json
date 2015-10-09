@@ -1,0 +1,28 @@
+{
+  "name": "simplecharts",
+  "version": "0.0.0",
+  "description": "webapp for create fast charts",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "charts"
+  ],
+  "authors": [
+    "adrien shen"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Chart.js": "~1.0.2",
+    "juiced": "~1.1.21",
+    "spectrum": "~1.7.1"
+  }
+}

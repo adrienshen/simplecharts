@@ -1,0 +1,243 @@
+@import url(https://fonts.googleapis.com/css?family=Dosis);
+
+/* Base, Typography */
+
+h3 {
+  font-family:Georgia;
+  color:#555;
+  font-size:1.6rem;
+  margin-top:0;
+}
+
+p,
+label.switch {
+  font-family: Courier, monospace;
+  color:#222;
+  margin-bottom:5px;
+  margin-top:5px;
+  font-size:14px;
+}
+
+.alert {
+  background: #FFDC4D;
+  color: #413402;
+  font-family: Arial, sans-serif;
+}
+
+
+div.main-body {
+	margin-bottom:45px;
+
+}
+
+h1.app-title {
+  max-width:280px;
+  font-family:'Dosis', sans-serif;
+  margin-top:0;
+  margin-left:40px;
+  font-size:1.8em;
+  color:#545454;
+  cursor:pointer;
+  transform: skew(-15deg); 
+  transition:transform 1s ease-in;
+  
+  box-shadow: 0px 3px 10px 1px #777;
+}
+h1.app-title:hover {
+  transform: skew(15deg);
+}
+
+h1.app-title span {
+  color: #0D548A;
+}
+
+header#page-header {
+	position: relative;
+	min-height: 100px; background-color:#efefef; opacity:.8;
+  /* Gradient Pattern */
+  background-color:#64BBFD;
+  background-image: linear-gradient(white 2px, transparent 2px),
+  linear-gradient(90deg, white 2px, transparent 2px),
+  linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+  background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  
+	width: 100%;
+	
+	border-bottom:1px solid #ccc;
+	
+	font-family: 'Helvetica nuea', Arial, sans-serif;
+	font-size: 1.5em;
+  box-shadow: 0px 3px 10px 1px #777;
+}
+
+/*Navigation*/
+select#mobile-nav {
+  display:none;
+}
+
+div#type-select {
+  width:80%;
+	position:absolute;
+	bottom:0; left:30px;
+	padding:5px;
+	padding-bottom:1px;
+}
+div#type-select span,
+div#type-select span:visited {
+	margin-left: 15px;
+	padding:10px;
+	padding-bottom:0;
+	border-radius: 10px 10px 0 0;
+	background-color:#FFF;
+}
+div#type-select a {
+	color:#5574F7;
+	font-size:18px;
+}
+
+
+canvas#generated-chart {
+	width:600px; height:400px;
+}
+
+/* Graph Output Area */
+div#graph-output {
+	background-color:transparent;
+}
+#graph-output img {
+  width: 40%;
+  border: 2px solid green;
+  padding:5px;
+  cursor:pointer;
+}
+#graph-output::before {
+  position:absolute;
+  
+  content:"click image to download";
+  font-family:Arial, sans-serif;
+  color:#555;
+  margin-top:-20px;
+}
+
+div#chart-inputs {
+	height:150px;
+	border-bottom:2px solid #999999;
+	margin-bottom:10px;
+}
+
+label.switch {
+	margin-bottom:5px;
+}
+
+a.add-remove-ds,
+div.add-remove-ds {
+  margin-right: 15px;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+  color: orangered;
+}
+input.form-control {
+	margin-bottom: 10px;
+}
+input.added-inputs {
+	width: 80%;
+}
+.sp-replacer {
+	height:36px !important;
+	margin-left: 0;
+}
+
+/* Type 2 */
+#typeview2 .header-text{
+  margin-bottom:20px;
+}
+.data-slices {
+  background-color:#efefef;
+  
+  border-radius:5px;
+  margin-bottom:20px;
+}
+.data-slices input {
+  height:30px;
+}
+.data-slices .sp-replacer {
+  float:right;
+}
+
+#submit-data,
+#submit-data2 {
+  width:100%;
+  background-color:#5574F7;
+  margin:0 auto;
+  
+  font-family: Arial, sans-serif;
+  letter-spacing: 5px;
+  color: #FFF;
+  border: 2px solid #1B1B9A;
+  
+  cursor:pointer;
+  outline-color: #555;
+  outline-width: 2px;
+}
+
+/* Helpers classes */
+.hidden {
+	visibility:hidden;
+}
+.error-hidden,
+.type-hidden {
+	display:none;
+	visibility:hidden;
+}
+.charttype-selected {
+  box-shadow: 2px 2px 5px 1px #999;
+  background-color: #5574F7 !important;
+  color: #FFF;
+}
+.charttype-selected a {
+  color:#FFF !important;
+}
+
+footer {
+	color:#878787;
+	font-size:0.85rem;
+	font-family: Helvetica, arial, sans-serif;
+	text-align: center;
+	
+	margin-bottom:50px;
+}
+
+/* Media Queries for small screens */
+
+/* Mobile navigation */
+
+@media (max-width: 650px) {
+  select#mobile-nav {
+    display:block;
+    width:100%;
+    margin-bottom:10px;
+  }
+  
+  span.chart-type {
+    display:none;
+    visibility:hidden;
+  }
+  
+}
+@media (max-width: 450px) {
+  input.form-control {
+    width: 75% !important;
+  }
+  h1.app-title {
+    margin-left:0;
+    font-size:1.6em;
+  } 
+}
+
+
+
+
+
+
