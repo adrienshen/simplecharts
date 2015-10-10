@@ -48,20 +48,25 @@ research and implement image output from canvas   											[k]
 Left:
 
 	-code
-		 -Refactor, think about errors, improvements
-		 -using gulp-jshint to check for bad coding
+		-graph needs some kinds of labels, legend...
+		-weird showing of previous graphs on hover
+		
+		-Refactor, think about errors, improvements
+		-using gulp-jshint to check for bad coding
 		 
 	-Html
-		-meta tags
-		-Google Antalytics
+		-rename main html file [k]
+		-meta tags [k]
+		-Google Antalytics [.]
 		-favicon
 
 	-Workflow
-		-bring in gulpjs in and automate things[.]
+		-bring in gulpjs in and automate things, learn basics of gulpjs system [k]
 		-git commit[k]
 	
 	-Upload
 		-research where to upload a webapp (own server or other)
+
 
 */
 
