@@ -144,17 +144,6 @@ Things being completed today:
     $('.error-message2').addClass('hidden');
   }
   
-  //if the data inputs have data entered in or not
-  function inputHasData() {
-    var hasInput;
-    var dataInputs = $('#datasets .added-inputs');
-    
-    for (var i = 0; i < dataInputs.length; i++) {
-      if( dataInputs[i].value === "" ) { return false; }
-    }
-    return true;
-  }
-  
   // changes the title text
   function changeTitle(type) {
     var $title = $('.type-title');
@@ -290,7 +279,7 @@ Things being completed today:
       if ($chartTypeClicked === "pie" || mt === "Pie") {
         changeTitle('Pie Graph');
       }
-      if ($chartTypeClicked === "donut" || mt === "Doughnut") { changeTitle('Doughnut Graph') }
+      if ($chartTypeClicked === "donut" || mt === "Doughnut") { changeTitle('Doughnut Graph'); }
       
       optionsArr = [
         {optionName: 'segmentShowStroke', optionText: 'segment stroke', checked: true},
@@ -372,39 +361,31 @@ Things being completed today:
   
 	function renderOnSubmit() {
     //attempts to clear the canvas as there are many glitches on repeated rendering
-		ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+  	ctx.clearRect(0, 0, canvasWidth, canvasHeight);
     if (newChart) {
-    //newChart.clear().destroy();
+    newChart.clear().destroy();
     }
     
-    if (inputHasData()) {
-      //clear error messages from previous rounds
-      clearErrors();
-      
-      //prepare auto labels if the field is empty
-      prepAutoLabels();
-         
-      //set the chart data to new values and re-renders the canvas
-      //setChartData();
-      graphtype === "Line"||
-      graphtype === "Bar"||
-      graphtype === "Radar" ? setChartData() : setChartData2();
-      
-      if (graphtype === "Line" || "Bar" || "Radar") {
-        newChart.clear().destroy();
-  		  newChart = new Chart(ctx)[graphtype]( templateData, templateOptions );
-      }
-      if (graphtype === "Pie" || "Donut" || "PolarArea") {
-        console.log('asdf')
-        newChart.clear().destroy();
-  		  newChart = new Chart(ctx)[graphtype]( templateData2, templateOptions );
-      }
-      // Draw the image from canvas
-      
-      
-      
+    //clear error messages from previous rounds
+    clearErrors();
+    
+    //prepare auto labels if the field is empty
+    prepAutoLabels();
+       
+    //set the chart data to new values and re-renders the canvas
+    //setChartData();
+    graphtype === "Line"||
+    graphtype === "Bar"||
+    graphtype === "Radar" ? setChartData() : setChartData2();
+    
+    if (graphtype === "Line" || "Bar" || "Radar") {
+      //newChart.clear().destroy();
+		  newChart = new Chart(ctx)[graphtype]( templateData, templateOptions );
     }
-    else { printErrorMessages('empty', 1); }
+    if (graphtype === "Pie" || "Donut" || "PolarArea") {
+      //newChart.clear().destroy();
+		  newChart = new Chart(ctx)[graphtype]( templateData2, templateOptions );
+    }
   }
   
   // Sets the main data values for renderOnSubmit
@@ -412,7 +393,7 @@ Things being completed today:
     /* Action Plan
      *
     */    
-    
+    console.log('setting chart type 1');
     //sets the color of each dataset to the user chosen color
       var $selectedColors = $('#typeview1 .color-initialize');
       
@@ -473,7 +454,9 @@ Things being completed today:
 	}
   
   function setChartData2() {
-    console.log('2');
+
+    console.log('setting chart type 2');
+    
     var $slices = $('.data-slices');
     //var $colors = $('#typeview1 .color-initialize');
     
@@ -585,7 +568,7 @@ Things being completed today:
       var $dataInputEl = $('<input />', {id: "", class: "form-control added-inputs"});
       var $dataColorSelect = $('<input>', {class: "color-select color1"});
       
-      $dataInputDiv.append($dataInputEl).append($dataColorSelect);;
+      $dataInputDiv.append($dataInputEl).append($dataColorSelect);
       $datasets.append($dataInputDiv);
       colorSelector();
     }

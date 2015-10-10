@@ -49,6 +49,7 @@ Left:
 
 	-code
 		 -Refactor, think about errors, improvements
+		 -using gulp-jshint to check for bad coding
 		 
 	-Html
 		-meta tags
@@ -56,8 +57,8 @@ Left:
 		-favicon
 
 	-Workflow
-		-bring gulpjs in and automate things
-		-git commit
+		-bring in gulpjs in and automate things[.]
+		-git commit[k]
 	
 	-Upload
 		-research where to upload a webapp (own server or other)
