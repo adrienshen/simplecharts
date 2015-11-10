@@ -1,0 +1,32 @@
+{
+  "name": "juiced",
+  "homepage": "http://juicedcss.com",
+  "authors": [
+    "Joey Lea <joey@w3by.com> (http://joeylea.com)"
+  ],
+  "description": "A mobile first, responsive CSS Framework based on Flexible Boxes",
+  "main": [
+    "sass/juiced.scss",
+    "dist/css/juiced.css"
+  ],
+  "keywords": [
+    "scss",
+    "sass",
+    "responsive",
+    "mobile first",
+    "flex",
+    "flexbox",
+    "flex box",
+    "flexible",
+    "boxes",
+    "css framework"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

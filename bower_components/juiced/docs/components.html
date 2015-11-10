@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juiced Components</title>
+  <link rel="stylesheet" href="../dist/css/juiced.css">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+  <style>
+    body{
+      font-family: 'Lato', sans-serif;
+      font-size:16px;
+    }
+    .top-padding {
+      margin-top: 95px;
+    }
+    .heading-bar{
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+    .link-push-up{
+      position: relative;
+      top: -90px;
+      display: block;
+    }
+    .side-links a{
+      padding: 3px 0;
+    }
+    #skip-content{
+      height: 0;
+      overflow: hidden;
+    }
+    #skip-content:focus{
+      height: auto;
+    }
+    #side-nav{
+      max-height: 100vh;
+      overflow-y: auto;
+      padding-bottom: 150px;
+    }
+    #navigation-bar{
+      background:#f2f2f2;
+    }
+    #navigation-bar[data-active=true]{
+      min-height: 200px;
+      /*text-align: center;*/
+      visibility: visible;
+      padding-top:20px;
+    }
+    #navigation-bar[data-active=true] #fixed-nav{
+      position: relative;
+    }
+    #navigation-bar[data-active=true] #side-nav{
+      padding-bottom: 20px;
+    }
+    samp {
+      background: #faeae6;
+    }
+  </style>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-47715515-4', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+</head>
+<body>
+
+  <div class="position-fixed background-color-white z-index-2 full-width heading-bar" >
+    <div class="container items-center">
+      <div class="col-7 col-xs-8 text-left">
+        <div class="container gutters-sm items-center">
+          <div class="col-4 col-xs-auto">
+            <a href="http://juicedcss.com">
+              <img src="logo.png" alt="Juiced" class="img-responsive" title="Juiced Logo">
+            </a>
+          </div>
+          <div class="col-8 col-xs-auto text-left">
+            <h2>components</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-5 col-xs-4 text-center xs-text-right">
+
+        <a href="#content" id="skip-content" class="display-block position-relative" tabindex="1">Skip to main content</a>
+
+
+        <a href="#toggle" id="toggle_nav" class="btn md-display-none color-white radius background-color-light hover-background-color-blue transition-background-color transition text-decoration-none">List All</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="col-md-2 col-md-order-2 col-10 col-push-1 col-md-push-0 top-padding hidden md-visible" id="navigation-bar"> 
+      <div class="container gutters items-start">
+        <div class="col-12">
+          <nav class="position-fixed full-width  font-bold" id="fixed-nav">
+            <div id="side-nav">
+              <a href="index.html" tabindex="3" class="color-primary"><h4>Juiced Docs</h4></a>
+
+              <a href="layout.html" tabindex="3"><h4 class="no-margin">Layout</h4></a>
+              <a href="classes.html" tabindex="3"><h4 class="no-margin">Helper Classes</h4></a>
+
+              <h4 class="no-margin color-light">Components</h4>
+              <ul class="no-style side-links">
+                <li><a href="#alerts" tabindex="2" class="no-text-decoration color-primary opacity-75 transition-opacity transition-fast hover-opacity-100 position-relative display-block">alerts</a></li>
+                <li><a href="#buttons" tabindex="2" class="no-text-decoration color-primary opacity-75 transition-opacity transition-fast hover-opacity-100 position-relative display-block">buttons</a></li>
+                <li><a href="#cards" tabindex="2" class="no-text-decoration color-primary opacity-75 transition-opacity transition-fast hover-opacity-100 position-relative display-block">cards</a></li>
+                <li><a href="#forms" tabindex="2" class="no-text-decoration color-primary opacity-75 transition-opacity transition-fast hover-opacity-100 position-relative display-block">forms</a></li>
+             
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-10 col-md-order-1">
+      <div class="container gutters items-start">
+        <div class="col-12 top-padding">
+          <a name="content" class="link-push-up"></a>
+          <a name="alerts" class="link-push-up"></a>
+          <h2 class="text-left">alerts</h2>
+        </div>
+        <div class="col-11 col-push-half">
+            <p class="text-left">
+              Alerts make it easy to display prominate information to the user.  They are styled using colors from your palette or you can use the <a href="classes.html">helper classes</a>.
+              Alerts can have an optional exit button and come in three sizes.
+              </p>
+        
+        </div>
+
+        <div class="col-sm-6 col-order-1">
+      
+          <div class="alert">This is a unstyled alert.</div>
+          <div class="alert alert-yellow">This is a yellow alert.</div>
+          <div class="alert alert-green alert-sm">This is a small green alert.</div>
+          <div class="alert alert-plain">This is a plain alert.</div>
+          <div class="alert alert-red alert-lg">This is a large red alert.</div>
+
+        </div>
+        <div class="col-sm-6 col-order-3">
+
+          <p>Alerts can have exit buttons with minimal markup:</p>
+          <div class="alert alert-blue">This is a blue alert with an exit button.<a class="alert-exit cursor-pointer">&times;</a></div>
+          <div class="alert alert-lg alert-green">This is a large green alert with an exit button.<a class="alert-exit cursor-pointer">&times;</a></div>
+          <div class="alert alert-sm">This is a small unstyled alert with an exit button.<a class="alert-exit cursor-pointer">&times;</a> </div>
+          <div class="alert alert-sm alert-yellow">This is a small yellow alert with an exit button.<a class="alert-exit cursor-pointer">&times;</a> </div>
+          <div class="alert alert-lg alert-red">This is a large red alert with an exit button, just for fun.<a class="alert-exit cursor-pointer">&times;</a> </div>
+
+  
+
+
+          <p class="color-light"> 
+            <strong>Note:</strong>
+            Juiced has no JavaScript baked in.  You must manually add any Javascript functionalty to hide alerts, Juiced makes this simple with CSS helper classes.  <a href="#alert-exit-functionality">See how</a>  &nbsp; <span class="hidden sm-visible position-absolute">&#8594;</span><span class="visible sm-hidden position-absolute">&#8595;</span> 
+          </p>
+
+        </div>
+        <div class="col-sm-6 col-order-2">
+         <pre class="no-margin-top" data-code-type="HTML">
+            &lt;div class="alert"&gt;
+            &nbsp; This is a unstyled alert.
+            &lt;/div&gt;
+            &lt;div class="alert alert-yellow"&gt;
+            &nbsp;   This is a yellow alert.
+            &lt;/div&gt;
+            &lt;div class="alert alert-green alert-sm"&gt;
+            &nbsp;   This is a small green alert.
+            &lt;/div&gt;
+            &lt;div class="alert alert-plain"&gt;
+            &nbsp; This is a plain alert.
+            &lt;/div&gt;
+            &lt;div class="alert alert-red alert-lg"&gt;
+            &nbsp; This is a large red alert.
+            &lt;/div&gt;
+         </pre>
+        </div>
+        <div class="col-sm-6 col-order-4">
+         <pre class="no-margin-top" data-code-type="HTML">
+          &lt;div class="alert alert-blue"&gt;
+          &nbsp;  This is a blue alert with an exit button.  
+          &nbsp; &lt;a class="alert-exit cursor-pointer"&gt;&amp;times;&lt;/a&gt;
+          &lt;/div&gt;   
+          </pre>
+         
+          <a name="alert-exit-functionality" class="link-push-up"></a>
+        
+          <strong>Add this JavaScript</strong> before your closing &lt;/body&gt; tag for simple exit functionality:
+
+          <pre class="background-color-dark color-white" data-code-type="JS">
+            &lt;script&gt;
+            (function(){
+            &nbsp; var _exits = [].slice.call( document.querySelectorAll('.alert-exit') );
+            &nbsp; _exits.forEach(function(ele) {
+             &nbsp; &nbsp;   ele.addEventListener("click", function() {
+               &nbsp; &nbsp;  &nbsp;  var _parent = this.parentNode;
+                &nbsp; &nbsp;  &nbsp;  _parent.className = _parent.className + " display-none";
+              &nbsp; &nbsp;  });
+            &nbsp; });
+            })();
+            &lt;/script&gt;
+          </pre>
+
+          <div class="alert alert-sm"><strong>What does this JavaScript do?</strong> It loops through all elements with a class of <samp>.alert-exit</samp> and adds an event listener on the exit buttons.  Now,  when an exit button is clicked, a class of <samp>.display-none</samp> is added to the parent element to hide it <em>(so don't wrap your exit markup)</em>.</div>
+          
+        
+        </div>
+     
+      </div>
+
+      <div class="container gutters items-start justify-space-">
+        <div class="col-12 top-padding">
+          <a name="buttons" class="link-push-up"></a>
+          <h2 class="text-left">buttons</h2>
+        </div>
+        <div class="col-11 col-push-half">
+            <p class="text-left">
+               Markup a button using a <samp>.btn</samp> class.  Add <samp>.btn-sm</samp> or <samp>.btn-lg</samp></samp> classes for smaller or larger buttons. Juiced makes no assumptions on how you will style your buttons so by default there are no colors, transitions, or hover effects.  Buttons may be styled using the <samp>.radius</samp>, <samp>.btn-pill</samp>, <samp>.btn-block</samp>, and <samp>.btn-outline</samp> classes as well as the <a href="classes.html">helper classes</a>.
+            </p>
+        
+        </div>
+
+        <div class="col-sm-12 col-order-1">
+
+          <div class="container gutters-all justify-space-around items-center text-center">
+            <div class="col-6 col-sm-4">
+              <a  class="btn btn-lg radius background-color-primary no-text-decoration color-white cursor-pointer  opacity-75 hover-opacity-100">Large Radius</a>
+            </div>
+            <div class="col-6 col-sm-4">
+              <a  class="btn btn-sm radius background-color-green color-white cursor-pointer opacity-75 hover-opacity-100 transition text-decoration-none">Small button</a>
+            </div>
+            <div class="col-6 col-sm-4">
+              <a  class="btn radius background-color-yellow cursor-pointer color-auto text-decoration-none hover-scale-105 transition transition-transform">Everday button</a>
+            </div>
+            <div class="col-6 col-sm-4">
+              <a  class="btn btn-lg radius background-color-red hover-background-color-lighter color-auto text-decoration-none cursor-pointer">Auto color</a>
+            </div>
+            <div class="col-6 col-sm-4">
+              <a  class="btn radius background-color-primary color-auto cursor-pointer hover-background-color-darker ">Basic button</a>
+            </div>
+            <div class="col-6 col-sm-4">
+              <a  class="btn btn-sm text-decoration-none radius background-color-green hover-background-color-darker color-auto cursor-pointer">Auto color button</a>
+            </div>
+            <div class="col-6 col-sm-4">
+              <a  class="btn btn-lg radius background-color-alt color-auto transition-fast hover-btn-outline hover-scale-105 hover-color-alt no-text-decoration cursor-pointer">Pretty button</a>
+            </div>
+            <div class="col-6 col-sm-4">
+              <a  class="btn btn-sm background-color-dark color-auto cursor-pointer  hover-scale-105 transition-all transition text-decoration-none">No radius button</a>
+            </div>
+            <div class="col-6 col-sm-4">
+              <a  class="btn radius background-color-light cursor-not-allowed no-text-decoration color-auto">Disabled button</a>
+            </div>
+          </div>
+          
+          <br />
+          <p class="text-center color-light no-margin-bottom">Outline buttons.</p>
+          <p class="text-center"><small class="color-light">Outline buttons have a transparent background and a border color that matches the font color.</small></p>
+
+          <div class="container gutters-all justify-space-around items-center text-center">
+            <div class="col-6 col-xs-4">
+              <a  class="btn btn-lg radius btn-outline background-color-blue color-blue opacity-75 hover-opacity-100 transition-opacity text-decoration-none cursor-pointer">Large outline</a>
+            </div>
+            <div class="col-6 col-xs-4">
+              <button type="button" class="btn btn-outline btn-sm background-color-green color-green hover-color-dark transition-fast transition text-decoration-none cursor-pointer hover-scale-105">Small button</button>
+            </div>
+            <div class="col-6 col-xs-4">
+              <a  class="btn radius btn-outline background-color-yellow hover-background-color-dark cursor-pointer hover-color-white no-text-decoration transition-background-color transition-fast">Everday button</a>
+            </div>
+            <div class="col-6 col-xs-4">
+              <a  class="btn btn-lg btn-outline radius color-alt text-decoration-none hover-color-dark transition-all transition">Outline Button</a>
+            </div>
+            <div class="col-6 col-xs-4">
+              <a  class="btn btn-pill btn-block btn-sm btn-outline hover-btn-outline-reverse color-dark no-t-d transition-fast hover-opacity-75 opacity-50 hover-background-color-dark hover-color-white">Reverse Outline Block Pill</a>
+            </div>
+            <div class="col-6 col-xs-4">
+              <a  class="btn btn-sm btn-pill btn-outline-thick btn-outline text-decoration-none color-blue opacity-75 hover-opacity-100 transition transtion-all hover-color-dark">Auto color button</a>
+            </div>
+            <div class="col-6 col-xs-4">
+              <a  class="btn btn-lg btn-outline-thick btn-outline radius color-yellow hover-color-darker no-t-d">Bad button</a>
+            </div>
+            <div class="col-6 col-xs-4">
+              <a  class="btn btn-sm btn-outline radius color-red opacity-50 hover-opacity-100 text-decoration-none">Outline button</a>
+            </div>
+            <div class="col-6 col-xs-4">
+              <a  class="btn btn-outline btn-outline-thick radius color-red hover-btn-outline-reverse hover-color-white hover-background-color-red transition-fast hover-scale-105 text-decoration-none">Red button</a>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+
+      <div class="container gutters items-start">
+        <div class="col-12 top-padding">
+          <a name="cards" class="link-push-up"></a>
+          <h2 class="text-left">cards</h2>
+        </div>
+        <div class="col-11 col-push-half">
+            <p class="text-left">
+              Cards are in.  You can create them with minimal markup using <samp>.card</samp> and child <samp>.card-content</samp> block elements.  They can be styled using the <a href="classes.html">helper classes</a>.
+            </p>
+            <strong>Card containers</strong>
+            <p class="text-left">
+              By default, cards fill 100% of the available width allowing them to sit nicely inside the Juiced grid.  If you don't want to use the grid, you can wrap your cards with a <samp>.card-masonry</samp> block element, and they will be set to a max-width of 360px as shown in our examples below (<em>see the masonry card below for more details</em>).
+            </p>
+
+        </div>
+        <div class="col-12">
+            <h4 class="color-light text-center text-uppercase">code examples:</h4>
+        </div>
+        <div class="col-12">
+          <div class="card-masonry-1 sm-card-masonry-2 lg-card-masonry-3 text-center">
+              <div class="card radius">
+                <img src="stars.jpg" alt="" class="card-img">
+                <div class="card-content">
+                  <h3>Card Images</h3>
+                  <p class="text-left">Using the <samp>.card-img</samp> class sets the image to 100% width.  This is useful for card with image based headers and footers.</p>
+                </div>
+                <div class="card-content card-footer">
+                  <div class="container text-center">
+                    <div class="col-6">
+                      <a href="#" class="btn btn-outline color-green">Join</a>
+                    </div>
+                    <div class="col-6">
+                       <a href="#" class="btn btn-outline color-red">Skip</a> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card radius">
+                <div class="card-content card-header">
+                <h3>.card-head</h3>
+                <p class="color-light">A container with classes <samp>.card-content</samp> and <samp>.card-header</samp></p>
+                </div>
+                <div class="card-content">
+                  <p class="no-margin text-left">Using <samp>.card-header</samp> adds a thin border on the bottom of the header section. It also spaces your heading tags and paragraph tags nicely for titles and subtitles.</p>
+                </div>
+                <div class="card-content card-footer">
+                  <a class="btn btn-outline color-green no-t-d radius cursor-pointer hover-color-blue transition-fast">Join</a>
+                </div>
+              </div>
+
+              <div class="card radius text-left">
+                <div class="card-content card-header text-left">
+                  <h3>Card Are Easy to Markup</h3>
+                  
+                </div>
+                <div class="card-content">
+                  <p>Create cards with a <samp>.card</samp> element and use <samp>.card-content</samp>, <samp>.card-header</samp>, <samp>.card-footer</samp>, and <samp>.card-img</samp> for aligning and spacing content inside cards.</p>
+                </div>
+                <div class="card-content card-footer">
+                  Easy footers
+                </div>
+              </div>
+
+              <div class="card no-border radius text-left">
+                <div class="card-content card-header text-left background-color-dark color-white">
+                  <h3>Style your cards</h3>
+                  
+                </div>
+                <div class="card-content  color-white background-color-green">
+                  <p>Cards can be styled using the helper classes and also with <samp>.radius</samp> and <samp>.no-border</samp>.</p>
+                </div>
+              </div>
+
+              <div class="card radius text-left">
+                <div class="card-content">
+                  <h3>Want stackable masonry-like cards?</h3>
+                  <p>Use our built in <samp>.card-masonry</samp> classes to wrap all your cards. Reponsive breakpoints are the same, so <samp>.card-masonry-1</samp> means one column on mobile and <samp>.sm-card-masonry-2</samp> would switch to two columns on small screens and up.  Juiced supports up to 4 columns for each breakpoint.</p>
+                </div>
+              
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="container gutters items-start">
+        <div class="col-12 top-padding">
+          <a name="forms" class="link-push-up"></a>
+          <h2 class="text-left">forms</h2>
+        </div>
+        <div class="col-11 col-push-half">
+            <p class="text-left">
+             Juiced has an opt-in class of <samp>.form-control</samp> for consistent styling across all your form elements.  Radio buttons and checkboxes are minimally styled by default so you won't need to use <samp>.form-control</samp> on them.
+            </p>
+            <div class="container">
+              <div class="col-sm-6">
+                <h4>Switches</h4>
+                <p class="text-left">
+                  Switches are the new way to stylize checkboxes and radio buttons. Markup a radio <samp>input</samp> with a class of <samp>.switch</samp> and a sibling <samp>label</samp> element with the same <samp>.switch</samp> class.  And viola.. you have a switch!  Add <samp>.radius</samp>, and <samp>.outline</samp> classes to your label for pretty styles. 
+                </p>
+                  <input class="switch" type="checkbox" id="switchEx1" name="checkbox" value="3">
+                  <label class="switch radius outline cursor-pointer" for="switchEx1" aria-label="Basic switch example">
+                  </label>
+
+                  <input class="switch" type="checkbox" id="switchEx2" name="checkbox" value="3">
+                  <label class="switch radius cursor-pointer" for="switchEx2" aria-label="Basic switch example">
+                  </label>
+
+                  <input class="switch" type="checkbox" id="switchEx3" name="checkbox" value="3">
+                  <label class="switch cursor-pointer" for="switchEx3" aria-label="Basic switch example">
+                  </label>
+
+                  <input class="switch" type="checkbox" id="switchEx4" name="checkbox" value="3">
+                  <label class="switch outline cursor-pointer" for="switchEx4" aria-label="Basic switch example">
+                  </label>
+              </div>
+              <div class="col-sm-5 col-sm-push-1">
+                <pre data-code-type="HTML">
+                  &lt;input class="switch" type="checkbox" id="ex1" name="checkbox" value="1"&gt;
+                  &lt;label class="switch radius outline" for="ex1"&gt;
+                    &nbsp; Switch label
+                  &lt;/label&gt;
+                </pre>
+
+                  <p class="alert alert-sm">
+                 Switches use <samp>$color-primary</samp>, <samp>$color-white</samp>, and <samp>$color-light</samp> for border and background colors.
+                </p>
+                
+                
+              </div>
+            </div>
+            
+
+        </div>
+        <div class="col-12">
+            <h4 class="color-light text-center text-uppercase">form examples:</h4>
+        </div>
+        <div class="col-12">
+
+          <form method="GET" action="#forms" accept-charset="UTF-8">
+              <div class="container gutters-sm-all items-center">
+                  <div class="col-sm-4 text-left sm-text-right">
+                      <label for="contact_name">Your Name:</label>
+                  </div>
+                  <div class="col-sm-8">
+                      <input id="contact_name" placeholder="John Smith" name="name" type="text" class="form-control radius">
+                  </div>
+                  <div class="col-sm-4 text-left sm-text-right">
+                       <label for="contact_email">Email Address:</label>  
+                  </div>
+                  <div class="col-sm-8">
+                       <input id="contact_email" placeholder="john.smith@example.com" name="email" type="email" class="form-control radius">
+                  </div>
+                  <div class="col-sm-4 text-left sm-text-right">
+                       <label for="contact_tel">Phone:</label>
+                  </div>
+                  <div class="col-sm-8">
+                      <input id="contact_tel" placeholder="555.555.1212" name="phone" type="text" class="form-control radius">
+                  </div>
+                  <div class="col-sm-4 text-left sm-text-right">
+                       <label for="contact_pass">Password:</label>
+                  </div>
+                  <div class="col-sm-8">
+                      <input id="contact_pass" type="password" name="phone" class="form-control radius">
+                  </div>
+                  <div class="col-sm-4 text-left sm-text-right">
+                       <label for="selections">Selections:</label>
+                  </div>
+                  <div class="col-sm-8">
+                      <select id="selections" class="form-control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                  </div>
+                  <div class="col-sm-4 text-left sm-text-right">
+                       <label for="selections_multi">Multiple Selections:</label>
+                  </div>
+                  <div class="col-sm-8">
+                      <select id="selections_multi" multiple class="form-control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                  </div>
+                     
+                  <div class="col-sm-4 text-right ">
+                       <label for="contact_message">Message:</label>
+                  </div>
+                  <div class="col-sm-8">
+                      <textarea id="contact_message" placeholder="How can we help you?" name="content" class="form-control"></textarea>
+                  </div>
+                  
+                  <div class="col-sm-6 col-sm-push-2">
+                      <label>
+                        <input type="radio" name="radio" value="1">
+                        Radio Option 1
+                      </label>
+                  </div>
+                  <div class="col-sm-6">
+                      <label>
+                        <input type="radio" name="radio" value="2" checked>
+                        Radio Option 2 Pre-checked
+                      </label>
+                  </div>
+                  
+                  <div class="col-sm-6  col-sm-push-2">
+                      <label class="cursor-not-allowed">
+                        <input type="radio" name="radio" value="3" disabled>
+                        Radio Option 3 Disabled
+                      </label>
+                  </div>
+                  <div class="col-sm-6">
+
+                      <input class="switch" type="radio" id="switchExample2" name="radio" value="5">
+                      <label class="switch" for="switchExample2">
+                        switch radio
+                      </label>
+                      
+                  </div>  
+                  <div class="col-sm-6  col-sm-push-2">
+                      <input class="switch" type="checkbox" id="switchExample1" name="checkbox" value="3">
+                      <label class="switch radius outline" for="switchExample1">
+                        switch checkbox outline
+                      </label>
+                  </div>
+                  <div class="col-sm-6">
+                      <label>
+                        <input type="checkbox" name="checkbox" value="3">
+                        And boring checkbox
+                      </label>
+                  </div>  
+
+                  <div class="col-12 text-center">
+                    <br />
+                    <button type="submit" class="btn color-white radius background-color-green hover-background-color-blue transition-fast cursor-pointer">Submit</button>
+                  </div>
+                </div>
+          </form>
+        </div>
+      </div>
+      <div class="container gutters items-start top-padding">
+        <div class="col-sm-4">
+          <h3 class="color-blue">See the markup  &nbsp; <span class="hidden sm-visible position-absolute">&#8594;</span><span class="visible sm-hidden position-absolute">&#8595;</span></h3>
+          <hr class="background-color-light no-border" style="height: 1px;" />
+          <h4 class="color-light text-uppercase">TIPS:</h4>
+          <div class="container gutters-sm-all items-start">
+            <div class="col-xs-6 col-12 col-sm-12">
+              <p class="alert alert-sm no-margin">
+                All <samp>.form-control</samp> elements sit nicely in the Juiced grid and fill 100% of the available width.
+              </p>
+            </div>
+            <div class="col-xs-6 col-sm-12">
+              <p class="alert alert-sm no-margin">
+                Most Juiced components allow for a <samp>.radius</samp> helper class to be added for easy border rounding.
+              </p>
+            </div>
+            <div class="col-xs-6 col-sm-12">
+               <p class="alert alert-sm no-margin">
+                If you choose not to use the grid for spacing, Juiced will automatically provide margin's to any <samp>input</samp> wrapped in a <samp>label</samp>.
+              </p>
+            </div>
+            <div class="col-xs-6 col-sm-12">
+               <p class="alert alert-sm no-margin">
+                As shown in our example, there is no need for form-groups. Use the grid to nicely space your form elements.
+              </p>
+            </div>
+         
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <pre data-code-type="HTML">
+            &lt;form&gt;
+              &nbsp;  &lt;div class="container gutters-sm-all items-center"&gt;
+              &nbsp;&nbsp;      &lt;div class="col-sm-4 text-left sm-text-right"&gt;
+              &nbsp;&nbsp;&nbsp;          &lt;label for="contact_name"&gt;Your Name:&lt;/label&gt;
+              &nbsp;&nbsp;      &lt;/div&gt;
+              &nbsp;&nbsp;      &lt;div class="col-sm-8"&gt;
+              &nbsp;&nbsp;&nbsp;          &lt;input id="contact_name" placeholder="John Smith" name="name" type="text" class="form-control radius"&gt;
+              &nbsp;&nbsp;      &lt;/div&gt;
+              &nbsp;&nbsp;      &lt;div class="col-sm-4 text-left sm-text-right"&gt;
+              &nbsp;&nbsp;&nbsp;           &lt;label for="contact_email"&gt;Email Address:&lt;/label&gt;  
+              &nbsp;&nbsp;      &lt;/div&gt;
+              &nbsp;&nbsp;      &lt;div class="col-sm-8"&gt;
+              &nbsp;&nbsp;&nbsp;           &lt;input id="contact_email" placeholder="john.smith@example.com" name="email" type="email" class="form-control radius"&gt;
+              &nbsp;&nbsp;      &lt;/div&gt;
+              &nbsp;&nbsp;      &lt;div class="col-sm-4 text-left sm-text-right"&gt;
+              &nbsp;&nbsp;&nbsp;           &lt;label for="contact_tel"&gt;Phone:&lt;/label&gt;
+              &nbsp;&nbsp;      &lt;/div&gt;
+              &nbsp;&nbsp;        &lt;div class="col-sm-8"&gt;
+              &nbsp;&nbsp;&nbsp;          &lt;input id="contact_tel" placeholder="555.555.1212" name="phone" type="text" class="form-control radius"&gt;
+              &nbsp;&nbsp;      &lt;/div&gt;
+              &nbsp;&nbsp;      &lt;div class="col-sm-4 text-left sm-text-right"&gt;
+              &nbsp;&nbsp;&nbsp;           &lt;label for="contact_pass"&gt;Password:&lt;/label&gt;
+              &nbsp;&nbsp;      &lt;/div&gt;
+              &nbsp;&nbsp;      &lt;div class="col-sm-8"&gt;
+              &nbsp;&nbsp;&nbsp;          &lt;input id="contact_pass" type="password" name="phone" class="form-control radius"&gt;
+              &nbsp;&nbsp;      &lt;/div&gt;
+              &nbsp;&nbsp;      &lt;div class="col-sm-4 text-left sm-text-right"&gt;
+              &nbsp;&nbsp;&nbsp;           &lt;label for="selections"&gt;Selections:&lt;/label&gt;
+              &nbsp;&nbsp;      &lt;/div&gt;
+              &nbsp;&nbsp;      &lt;div class="col-sm-8"&gt;
+              &nbsp;&nbsp;&nbsp;          &lt;select id="selections" class="form-control"&gt;
+              &nbsp;&nbsp;&nbsp;&nbsp;            &lt;option value="1"&gt;1&lt;/option&gt; &lt;option value="2"&gt;2&lt;/option&gt; &lt;option value="3"&gt;3&lt;/option&gt;
+              &nbsp;&nbsp;&nbsp;          &lt;/select&gt;
+              &nbsp;&nbsp;      &lt;/div&gt;
+              &nbsp;&nbsp;      &lt;div class="col-sm-4 text-left sm-text-right"&gt;
+              &nbsp;&nbsp;&nbsp;           &lt;label for="selections_multi"&gt;Multiple Selections:&lt;/label&gt;
+              &nbsp;&nbsp;      &lt;/div&gt;
+              &nbsp;&nbsp;      &lt;div class="col-sm-8"&gt;
+              &nbsp;&nbsp;&nbsp;          &lt;select id="selections_multi" multiple class="form-control"&gt;
+              &nbsp;&nbsp;&nbsp;&nbsp;            &lt;option value="1"&gt;1&lt;/option&gt; &lt;option value="2"&gt;2&lt;/option&gt; &lt;option value="3"&gt;3&lt;/option&gt; &lt;option value="4"&gt;4&lt;/option&gt; &lt;option value="5"&gt;5&lt;/option&gt;
+              &nbsp;&nbsp;&nbsp;          &lt;/select&gt;
+              &nbsp;&nbsp;      &lt;/div&gt;
+              &nbsp;&nbsp;      &lt;div class="col-sm-12"&gt;
+              &nbsp;&nbsp;&nbsp;           &lt;label for="contact_message"&gt;Message:&lt;/label&gt;
+              &nbsp;&nbsp;      &lt;/div&gt;
+              &nbsp;&nbsp;      &lt;div class="col-sm-12"&gt;
+              &nbsp;&nbsp;&nbsp;          &lt;textarea id="contact_message" placeholder="How can we help you?" name="content" class="form-control"&gt;&lt;/textarea&gt;
+              &nbsp;&nbsp;      &lt;/div&gt;
+              &nbsp;&nbsp;     &lt;div class="col-sm-6"&gt;
+              &nbsp;&nbsp;&nbsp;          &lt;label&gt;
+              &nbsp;&nbsp;&nbsp;&nbsp;            &lt;input type="radio" name="radio" value="1"&gt;
+              &nbsp;&nbsp;&nbsp;&nbsp;            Radio Option 1
+              &nbsp;&nbsp;&nbsp;          &lt;/label&gt;
+              &nbsp;&nbsp;      &lt;/div&gt;
+              &nbsp;&nbsp;      &lt;div class="col-sm-6"&gt;
+              &nbsp;&nbsp;&nbsp;          &lt;label&gt;
+              &nbsp;&nbsp;&nbsp;&nbsp;            &lt;input type="radio" name="radio" value="2" checked&gt;
+              &nbsp;&nbsp;&nbsp;&nbsp;            Radio Option 2 Pre-checked
+              &nbsp;&nbsp;&nbsp;          &lt;/label&gt;
+              &nbsp;&nbsp;      &lt;/div&gt;
+              &nbsp;&nbsp;      &lt;div class="col-sm-6"&gt;
+              &nbsp;&nbsp;&nbsp;          &lt;label class="cursor-not-allowed"&gt;
+              &nbsp;&nbsp;&nbsp;&nbsp;            &lt;input type="radio" name="radio" value="3" disabled&gt;
+              &nbsp;&nbsp;&nbsp;&nbsp;           Radio Option 3 Disabled
+              &nbsp;&nbsp;&nbsp;          &lt;/label&gt;
+              &nbsp;&nbsp;      &lt;/div&gt;
+              &nbsp;&nbsp;       &lt;div class="col-sm-6"&gt;
+              &nbsp;&nbsp;&nbsp;          &lt;label&gt;
+              &nbsp;&nbsp;&nbsp;&nbsp;            &lt;input type="checkbox" name="checkbox" value="3"&gt;
+              &nbsp;&nbsp;&nbsp;&nbsp;            And checkbox
+              &nbsp;&nbsp;&nbsp;          &lt;/label&gt;
+              &nbsp;&nbsp;      &lt;/div&gt;       
+              &nbsp;&nbsp;  &lt;div class="col-12 text-center"&gt;
+              &nbsp;&nbsp;&nbsp;      &lt;button type="submit" class="btn radius color-white background-color-green hover-background-color-blue transition-fast cursor-pointer"&gt;Submit&lt;/button&gt;
+              &nbsp;&nbsp;  &lt;/div&gt;
+              &nbsp;  &lt;/div&gt;
+            &lt;/form&gt;
+          </pre>
+        </div>
+      </div>
+        <div class="col-12 text-center col-order-3">
+      <p class="color-light">Copyright 2015 Joey Lea.  All rights reserved.</p>
+   </div>
+    </div>
+    
+
+
+  
+
+  </div>
+  <script>
+  (function(){
+
+    var _navToggle = document.getElementById("toggle_nav"),
+      _navBar = document.getElementById("navigation-bar");
+   
+    _navToggle.addEventListener("click", function() {
+      if(_navBar.getAttribute("data-active") === "true") {
+        this.innerText = 'List All';
+        _navBar.setAttribute("data-active", "false");
+      }else{
+        this.innerText = 'Hide';
+        _navBar.setAttribute("data-active", "true");
+        window.scrollTo(0,0);
+      }
+    });
+
+    var _exits = [].slice.call(document.querySelectorAll('.alert-exit'));
+    _exits.forEach(function(ele) {
+      ele.addEventListener("click", function() {
+        var _parent = this.parentNode;
+        _parent.className = _parent.className + " display-none";
+      });
+    });
+
+    // var _btnClass = [].slice.call(document.querySelectorAll('.btn'));
+    // _btnClass.forEach(function(ele) {
+    //   ele.addEventListener("click", function(){ 
+    //     var _classList = this.className;
+    //     // alert(_classList);
+    //   })
+    // });
+
+  })();
+
+  </script>
+
+</body>
+</html>
