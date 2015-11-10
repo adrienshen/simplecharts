@@ -3,10 +3,10 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Make a web chart</title>
-	
+
 	<meta name="description" content="A online applications for generating dynamic graphs.">
 	<meta name="keywords" content="graph, pie graph, bar graph, polar graph, radar graph, line graph, dynamic">
-	
+
 	<link rel="stylesheet" href="bower_components/juiced/dist/css/juiced.css" />
 	<link rel="stylesheet" type="text/css" href="bower_components/spectrum/spectrum.css">
 	<link rel="stylesheet" type"text/css" href="public/css/mainstyle.css">
@@ -16,9 +16,9 @@
 <body>
 	<div class="flex-wrapper main-body container gutters-all">
 		<header id="page-header" class="col-12">
-			
+
 			<H1 class="app-title">SIMPLE<span>GRAPH</span></H1>
-			
+
 			<div id="type-select">
 				<span data-type="line" class="chart-type"><a href="#">Line</a></span>
 				<span data-type="bar" class="chart-type"><a href="#">Bar</a></span>
@@ -27,18 +27,18 @@
 				<span data-type="donut" class="chart-type"><a href="#">Doughnut</a></span>
 				<span data-type="polar" class="chart-type"><a href="#">Polar</a></span>
 			</div> <!-- /#type-select -->
-			
+
 			<!-- Mobile select navigation
-				
+
 			 Mobile select navigation -->
 		</header>
-		
-		
+
+
 		<div id="input-wrapper" class="container gutters-all">
-			
+
 		<!--Data container -->
 			<div id="main-data" class="col-12 col-sm-6">
-				
+
 				<h3 class="type-title">Line Chart</h3>
 			<!--Start TypeView 1 -->
 				<div id="typeview1" class="">
@@ -47,41 +47,41 @@
 							<div class="col-12 add-remove-ds">
 								<p>For datasets, Enter in numbers seperated by a comma.</p>
 							</div>
-							<input class="form-control added-inputs col-10" type="text" id="dataset1" name="dataset1" 
+							<input class="form-control added-inputs col-10" type="text" id="dataset1" name="dataset1"
 								placeholder="65,59,80,81,56,55,40 ... " />
 							<input type="text" class="color-select col-2 color1" />
 						</div>
-					
-						<div class="container">	
-							<input class="form-control added-inputs col-10" type="text" id="dataset2" name="dataset2" 
+
+						<div class="container">
+							<input class="form-control added-inputs col-10" type="text" id="dataset2" name="dataset2"
 								placeholder="28,48,40,19,86,27,90 ... " />
 							<input type="text" class="color-select col-2 color1" />
 						</div>
-					
+
 						<a id="add-ds" class="add-remove-ds" href="#">add a dataset [+]</a>
 						<a id="rm-ds" class="add-remove-ds hidden" href="#">remove a dataset [-]</a>
 						<!-- Where additional datasets get appended to -->
 					</div> <br />
-					
+
 					<div>
 					<p>Labels seperated by a comma (has to be enough for the datasets)</p>
 					</div>
-					<input class="form-control" type="text" id="xlabels" name="xlabels" 
+					<input class="form-control" type="text" id="xlabels" name="xlabels"
 						placeholder="Jan,Feb,Mar,Apr,May,June,July ... " /> <br />
-					
+
 						<!-- Form errors messages / success go here: -->
 						<div id="" class="hidden alert alert-yellow error-message1">"sample error message:  "</div>
-					
+
 					<button class="btn btn-sm radius background-color-primary color-auto" type="submit" id="submit-data">graph data!</button>
 				</div>
 		<!--End TypeView 1 -->
-		
+
 		<!-- TypeView 2 -->
 				<div id="typeview2" class="type-hidden container">
 					<div class="col-12 header-text">
 						<p>Type in a lable, dataset, and color for each slice.</p>
 					</div>
-					
+
 					<div class="container data-slices col-6">
 						<input type="text" class="labels col-10 " placeholder="labelA" />
 						<input type="number" class="slice-data col-10 " placeholder="10" />
@@ -92,55 +92,55 @@
 						<input type="number" class="slice-data col-10 " placeholder="5" />
 						<input type="text" class="color-select col-2" />
 					</div>
-					
+
 					<a href="#" id="add-slice" class="add-remove-ds">add data slice [+]</a>
 					<a href="#" id="rm-slice" class="add-remove-ds hidden">remove data slice [-]</a>
-					
+
 					<!-- Form errors messages / success go here: -->
 					<div id="" class="hidden col-12 alert alert-yellow error-message2">"sample error message:  "</div>
-					
+
 					<button class="btn btn-sm radius background-color-primary color-auto" type="submit" id="submit-data2">graph data!</button>
-					
+
 				</div>
 		<!-- End TypeView 2 -->
-		
+
 			</div> <!--End data container -->
-		
+
 			<div id="switch-options" class="container col-12 col-sm-6 color-auto background-color-white">
-				
+
 				<!-- Default option switches -->
 				<input class="switch" type="checkbox" id="scaleShowGridLines" checked />
 				<label class="switch" for="scaleShowGridLines">show gridlines</label>
-				
+
 				<input class="switch" type="checkbox" id="bezierCurve" checked />
 				<label class="switch" for="bezierCurve">bezier curves</label>
-				
+
 				<input class="switch" type="checkbox" id="datasetFill" checked />
 				<label class="switch" for="datasetFill" >fill with color</label>
 
 				<input class="switch" type="checkbox" id="pointDot" checked />
 				<label class="switch" for="pointDot">show grid dots</label>
-				
+
 			</div>
 		</div> <!--/Input-wrapper -->
-			
+
 		<p class="col-12 color-auto">Displaying chart below</p>
 		<div class="graph-area-wrapper container gutters-all">
-			<canvas id="generated-chart" class="col-12 col-sm-8 col-lg-6"> 
+			<canvas id="generated-chart" class="col-12 col-sm-8 col-lg-6">
 				<p>Unfortunatly: your browser is too old (ie8?), you should consider upgrading</p>
 			</canvas>
 			<div id="graph-output" class="col-12 col-sm-4 col-lg-6">
-				
+
 			</div>
-			
+
 		</div> <!--/.graph-area-wrapper -->
 	</div><!--/.main-body -->
-		
+
 		<footer>
 			<span id="copyr">made with love by: adrien shen &copy;2015</span> <br />
 			<span id="tech-details"><a href="#">read the technical post about this app</a></span>
 		</footer>
-		
+
 	</div>
 
 	<!--Vendor specific Javascript - bower components-->
@@ -149,7 +149,7 @@
 	<script src="bower_components/Chart.js/Chart.js" type="text/javascript"></script>
 	<!--Author scripts -->
 	<script src="public/js/bundle.js" type="text/javascript"></script>
-	
+
 	<script type="text/javascript">
 	$(function() {
 		$('span.chart-type').on('click', function() {
